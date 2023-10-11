@@ -9,14 +9,24 @@ class BaseModel:
     """A class to define a base model
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """initializes the instance of the BaseModel
-        """
 
-        date_now = datetime.now()
-        self.id = str(uuid4())
-        self.created_at = date_now
-        self.updated_at = date_now
+        Args:
+            args: positional arguments
+            kwargs: named arguments
+        """
+        if len(kwargs) > 0:
+            self.__dict__ = kwargs
+            dct = self.__dict__
+            del dct["__class__"]
+            dct["created_at"] = datetime.fromisoformat(dct["created_at"])
+            dct["updated_at"] = datetime.fromisoformat(dct["updated_at"])
+        else:
+            date_now = datetime.now()
+            self.id = str(uuid4())
+            self.created_at = date_now
+            self.updated_at = date_now
 
     def __str__(self):
         cls_name = self.__class__.__name__
