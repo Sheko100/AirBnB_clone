@@ -47,12 +47,13 @@ class TestFileStorage(unittest.TestCase):
             os.remove(file_path)
 
         fs = FileStorage()
-        model1 = BaseModel()
 
         fs.save()
         fs.reload()
 
         self.assertTrue(os.path.isfile(file_path))
+
+        os.remove(file_path)
 
     def test_reload_method(self):
         """Test that checks the normal behavior of the reload method
@@ -76,3 +77,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertIn(model2_key, objects)
         model2_id = objects[model2_key].id
         self.assertEqual(model2_id, model2.id)
+        
+        file_path = "file.json"
+        if os.path.isfile(file_path):
+            os.remove(file_path)
