@@ -2,6 +2,7 @@
 """Module to define a BaseModel class"""
 
 from datetime import datetime
+from models import storage
 from uuid import uuid4
 
 
@@ -23,10 +24,10 @@ class BaseModel:
             dct["created_at"] = datetime.fromisoformat(dct["created_at"])
             dct["updated_at"] = datetime.fromisoformat(dct["updated_at"])
         else:
-            date_now = datetime.now()
             self.id = str(uuid4())
-            self.created_at = date_now
-            self.updated_at = date_now
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         cls_name = self.__class__.__name__
@@ -37,6 +38,7 @@ class BaseModel:
         """Updates the updated_at attribute with the current datetime
         """
 
+        storage.save()
         self.updated_at = datetime.now()
 
     def to_dict(self):
