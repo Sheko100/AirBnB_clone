@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module to define FileStorage class"""
 
+import importlib
 import json
 import os
 
