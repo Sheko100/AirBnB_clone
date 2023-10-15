@@ -14,7 +14,14 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    modules = {"BaseModel": "base_model"}
+    modules = {"BaseModel": "base_model",
+               "User": "user",
+               "State": "state",
+               "City": "city",
+               "Amenity": "amenity",
+               "Place": "place",
+               "Review": "review"
+               }
     objects = storage.all()
 
     def do_EOF(self, arg_str):
@@ -158,19 +165,44 @@ class HBNBCommand(cmd.Cmd):
             elif key not in objs:
                 print("** no instance found **")
             elif hasattr(objs[key], args[2]):
-                attr = getattr(objs[key], args[2])
+                obj = objs[key]
+                attr_type = type(getattr(obj, args[2]))
+                attr = args[2]
                 val = args[3].replace("\"", "")
-                if type(attr) == int:
+                if attr_type == int:
                     val = int(val)
-                elif type(attr == float):
+                elif attr_type == float:
                     val = float(val)
 
-                setattr(objs[key], attr, val)
-            else:
-                val = args[3].replace("\"", "")
-                print(type(val))
-                obj = objs[key]
-                obj.__dict__[args[2]] = val
+                setattr(obj, attr, val)
+                obj.save()
+
+    def help_create(self):
+        """prints help documentaion
+        """
+        print("Creates a new instance of the BaseModel")
+
+    def help_show(self):
+        """prints help documentaion
+        """
+        print("Prints the string representaion of an instance")
+
+    def help_destroy(self):
+        """prints help documentaion
+        """
+        print("Deletes an instance base on the class name and id")
+
+    def help_all(self):
+        """prints help documentaion
+        """
+        print("Prints all string representation of all instances")
+        print("based or not on the class name")
+
+    def help_update(self):
+        """prints help documentaion
+        """
+        print("Updates an instance based on the class name and id")
+        print("by adding or updating attribute")
 
 
 if __name__ == '__main__':
