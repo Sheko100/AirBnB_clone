@@ -56,8 +56,14 @@ class FileStorage:
         """Deserializes the JSON file into the __objects attribute
         """
 
-        from ..base_model import BaseModel
-
+        modules = {"BaseModel": "base_model",
+                   "User": "user",
+                   "State": "state",
+                   "City": "city",
+                   "Amenity": "amenity",
+                   "Place": "place",
+                   "Review": "review"
+                   }
         file_path = self.__file_path
         if os.path.isfile(file_path):
             with open(file_path, encoding="utf-8") as file:
@@ -65,5 +71,9 @@ class FileStorage:
 
             objects_to_load = json.loads(jsons)
             for id, dct in objects_to_load.items():
-                obj = BaseModel(**dct)
+                cls_name = dct["__class__"]
+                model_path = "..{}".format(modules[cls_name])
+                module = importlib.import_module(model_path, "models.engine")
+                cls = getattr(module, dct["__class__"])
+                obj = cls(**dct)
                 self.new(obj)
