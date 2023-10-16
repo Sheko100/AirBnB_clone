@@ -77,7 +77,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertIn(model2_key, objects)
         model2_id = objects[model2_key].id
         self.assertEqual(model2_id, model2.id)
-        
+
         file_path = "file.json"
         if os.path.isfile(file_path):
             os.remove(file_path)
