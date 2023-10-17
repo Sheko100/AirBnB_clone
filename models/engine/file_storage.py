@@ -72,10 +72,9 @@ class FileStorage:
 
             objects_to_load = json.loads(jsons)
             for id, dct in objects_to_load.items():
-                if "__class__" in dct:
-                    cls_name = dct["__class__"]
-                    model_path = "..{}".format(modules[cls_name])
-                    module = importlib.import_module(model_path, pkg)
-                    cls = getattr(module, dct["__class__"])
-                    obj = cls(**dct)
-                    self.new(obj)
+                cls_name = dct["__class__"]
+                model_path = "..{}".format(modules[cls_name])
+                module = importlib.import_module(model_path, pkg)
+                cls = getattr(module, dct["__class__"])
+                obj = cls(**dct)
+                self.new(obj)
