@@ -9,18 +9,31 @@ A project during ALX program to make a command line interface program to manage 
 ├── console.py
 ├── __init__.py
 ├── models
-│   ├── base_model.py
-│   ├── engine
-│   │   ├── file_storage.py
-│   │   └── __init__.py
-│   └── __init__.py
+│   ├── amenity.py
+│   ├── base_model.py
+│   ├── city.py
+│   ├── engine
+│   │   ├── file_storage.py
+│   │   └── __init__.py
+│   ├── __init__.py
+│   ├── place.py
+│   ├── review.py
+│   ├── state.py
+│   └── user.py
 ├── README.md
 └── tests
+    ├── __init__.py
     └── test_models
         ├── __init__.py
+        ├── test_amenity.py
         ├── test_base_model.py
-        └── test_engine
-            └── test_file_storage.py
+        ├── test_city.py
+        ├── test_engine
+        │   └── test_file_storage.py
+        ├── test_place.py
+        ├── test_review.py
+        ├── test_state.py
+        └── test_user.py
 ```
 
 ## How to start the console
