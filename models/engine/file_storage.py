@@ -64,7 +64,6 @@ class FileStorage:
                    "Place": "place",
                    "Review": "review"
                    }
-        modules = self.modules
         file_path = self.__file_path
         pkg = "models.engine"
         if os.path.isfile(file_path):
