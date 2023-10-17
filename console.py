@@ -182,6 +182,76 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, args[2], val)
                 obj.save()
 
+    def do_BaseModel(self, args_str):
+        """Provides the methods of the BaseModel class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("BaseModel")
+
+    def do_User(self, args_str):
+        """Provides the methods of the User class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("User")
+
+    def do_City(self, args_str):
+        """Provides the methods of the City class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("City")
+
+    def do_Place(self, args_str):
+        """Provides the methods of the Place class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("Place")
+
+    def do_State(self, args_str):
+        """Provides the methods of the State class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("State")
+
+    def do_Amenity(self, args_str):
+        """Provides the methods of the Amenity class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("Amenity")
+
+    def do_Review(self, args_str):
+        """Provides the methods of the Review class
+
+        Args:
+            arg_str (str): the remaining of the line after the command
+        """
+
+        if ".all()" in args_str:
+            self.do_all("Review")
+
     def help_create(self):
         """prints help documentaion
         """
