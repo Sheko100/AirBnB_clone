@@ -176,6 +176,11 @@ class HBNBCommand(cmd.Cmd):
 
                 setattr(obj, attr, val)
                 obj.save()
+            else:
+                val = args[3].replace("\"", "")
+                obj = objs[key]
+                setattr(obj, args[2], val)
+                obj.save()
 
     def help_create(self):
         """prints help documentaion
