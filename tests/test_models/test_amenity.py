@@ -18,6 +18,6 @@ class TestAmenity(unittest.TestCase):
 
         self.assertEqual(new_amenity.name, "")
 
-        new_state.name = "test amenity name"
+        new_amenity.name = "test amenity name"
 
-        self.assertEqual(new_state.name, "test amenity name")
+        self.assertEqual(new_amenity.name, "test amenity name")
