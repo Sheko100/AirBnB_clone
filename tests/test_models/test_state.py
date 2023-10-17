@@ -6,7 +6,7 @@ from models.state import State
 
 
 class TestState(unittest.TestCase):
-    """Tests for the City class"""
+    """Tests for the State class"""
 
     def test_attributes_updating(self):
         """Test that assigning a value for the attributes and
