@@ -30,7 +30,6 @@ class TestUser(unittest.TestCase):
         new_user.password = "testpass"
         self.assertEqual(new_user.password, "testpass")
 
-
     def test_first_name_updating(self):
         """Test that assigning a value for the email attribute and
         checks the value against the object attribute value
@@ -50,6 +49,3 @@ class TestUser(unittest.TestCase):
         self.assertEqual(new_user.last_name, "")
         new_user.last_name = "Akram"
         self.assertEqual(new_user.last_name, "Akram")
-
-
-
