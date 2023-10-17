@@ -16,14 +16,6 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
-    modules = {"BaseModel": "base_model",
-               "User": "user",
-               "State": "state",
-               "City": "city",
-               "Amenity": "amenity",
-               "Place": "place",
-               "Review": "review"
-               }
 
     def all(self):
         """Gets the __objects attribute
@@ -64,17 +56,27 @@ class FileStorage:
         """Deserializes the JSON file into the __objects attribute
         """
 
+        modules = {"BaseModel": "base_model",
+                   "User": "user",
+                   "State": "state",
+                   "City": "city",
+                   "Amenity": "amenity",
+                   "Place": "place",
+                   "Review": "review"
+                   }
         modules = self.modules
         file_path = self.__file_path
+        pkg = "models.engine"
         if os.path.isfile(file_path):
             with open(file_path, encoding="utf-8") as file:
                 jsons = file.read()
 
             objects_to_load = json.loads(jsons)
             for id, dct in objects_to_load.items():
-                cls_name = dct["__class__"]
-                model_path = "..{}".format(modules[cls_name])
-                module = importlib.import_module(model_path, "models.engine")
-                cls = getattr(module, dct["__class__"])
-                obj = cls(**dct)
-                self.new(obj)
+                if "__class__" in dct:
+                    cls_name = dct["__class__"]
+                    model_path = "..{}".format(modules[cls_name])
+                    module = importlib.import_module(model_path, pkg)
+                    cls = getattr(module, dct["__class__"])
+                    obj = cls(**dct)
+                    self.new(obj)
