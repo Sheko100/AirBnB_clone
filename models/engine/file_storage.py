@@ -16,6 +16,14 @@ class FileStorage:
 
     __file_path = "file.json"
     __objects = {}
+    modules = {"BaseModel": "base_model",
+               "User": "user",
+               "State": "state",
+               "City": "city",
+               "Amenity": "amenity",
+               "Place": "place",
+               "Review": "review"
+               }
 
     def all(self):
         """Gets the __objects attribute
@@ -56,14 +64,7 @@ class FileStorage:
         """Deserializes the JSON file into the __objects attribute
         """
 
-        modules = {"BaseModel": "base_model",
-                   "User": "user",
-                   "State": "state",
-                   "City": "city",
-                   "Amenity": "amenity",
-                   "Place": "place",
-                   "Review": "review"
-                   }
+        modules = self.modules
         file_path = self.__file_path
         if os.path.isfile(file_path):
             with open(file_path, encoding="utf-8") as file:
