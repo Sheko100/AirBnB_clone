@@ -188,9 +188,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "BaseModel"
 
         if ".all()" in args_str:
-            self.do_all("BaseModel")
+            self.do_all(cls_name)
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def do_User(self, args_str):
         """Provides the methods of the User class
@@ -198,9 +205,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "User"
 
         if ".all()" in args_str:
-            self.do_all("User")
+            self.do_all(cls_name)
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def do_City(self, args_str):
         """Provides the methods of the City class
@@ -208,9 +222,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "City"
 
         if ".all()" in args_str:
-            self.do_all("City")
+            self.do_all(cls_name)
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def do_Place(self, args_str):
         """Provides the methods of the Place class
@@ -218,9 +239,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "Place"
 
         if ".all()" in args_str:
-            self.do_all("Place")
+            self.do_all(cls_name)
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def do_State(self, args_str):
         """Provides the methods of the State class
@@ -228,9 +256,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "State"
 
         if ".all()" in args_str:
             self.do_all("State")
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def do_Amenity(self, args_str):
         """Provides the methods of the Amenity class
@@ -238,9 +273,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "Amenity"
 
         if ".all()" in args_str:
-            self.do_all("Amenity")
+            self.do_all(cls_name)
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def do_Review(self, args_str):
         """Provides the methods of the Review class
@@ -248,9 +290,16 @@ class HBNBCommand(cmd.Cmd):
         Args:
             arg_str (str): the remaining of the line after the command
         """
+        cls_name = "Review"
 
         if ".all()" in args_str:
-            self.do_all("Review")
+            self.do_all(cls_name)
+        elif ".count()" in args_str:
+            count = 0
+            for obj in self.objects.values():
+                if cls_name == obj.__class__.__name__:
+                    count += 1
+            print(count)
 
     def help_create(self):
         """prints help documentaion
