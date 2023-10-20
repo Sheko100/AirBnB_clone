@@ -1,0 +1,11 @@
+header {
+	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	height: 70px;
+	width: 100%;
+	border-bottom: solid 1px #CCCCCC;
+}
+header span {
+	display: inline-block;
+}
