@@ -4,6 +4,7 @@
 	border: solid 1px #DDDDDD;
 	border-radius: 4px;
 	position: relative;
+	background-color: #FFFFFF;
 }
 .filters button {
 	position: absolute;
