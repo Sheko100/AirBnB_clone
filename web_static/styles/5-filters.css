@@ -31,6 +31,7 @@
 	height: 100%;
 	width: 25%;
 	padding: 1.3em 0 1.3em 3em;
+	float: left;
 }
 .locations h3, .amenities h3 {
 	font-weight: 600;
