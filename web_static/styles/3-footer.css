@@ -4,6 +4,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	border-top: solid 1px #CCCCCC;
+	background-color: #FFFFFF;
 }
 footer span {
 	position: absolute;
