@@ -1,0 +1,119 @@
+.places{
+	padding: 25px 20px;
+}
+.places h1, .places article > h2 {
+	font-size: 30px;
+	margin: 0;
+}
+.places article > h2:first-child {
+	text-align: center;
+}
+.places ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.places > ul:first-of-type {
+	text-align: center;
+}
+.places > ul > li {
+	display: inline-block;
+	vertical-align: top;
+}
+.places article {
+	min-height: 750px;
+	width: 390px;
+	padding: 20px;
+	margin: 20px;
+	border: solid 1px #FF5A5F;
+	border-radius: 4px;
+}
+.price_by_night {
+	display: inline-block;
+	position: relative;
+	bottom: 1.5em;
+	left: 5em;
+	line-height: 65px;
+	min-width: 60px;
+	height: 60px;
+	padding: 10px;
+	color: #FF5A5F;
+	border: solid 4px #FF5A5F;
+	border-radius: 50%;
+	font-size: 30px;
+	text-align: center;
+}
+.information {
+	box-sizing: border-box;
+	height: 80px;
+	border-top: solid 1px #DDDDDD; 
+	border-bottom: solid 1px #DDDDDD; 
+	margin-top: -30px;
+	padding: 5px 0;
+	text-align: center;
+}
+.max_guest {
+	background-image: url("../images/icon_group.png");
+}
+.number_rooms {
+	background-image: url("../images/icon_bed.png");
+}
+.number_bathrooms {
+	background-image: url("../images/icon_bath.png");
+}
+.max_guest, .number_rooms, .number_bathrooms {
+	display: inline-block;
+	width: 100px;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding-top: 13%;
+}
+.user, .description {
+	text-align: left;
+	margin-top: 20px;
+}
+.places .amenities,  .reviews {
+	margin-top: 40px;
+	text-align: left;
+}
+.places .amenities > h2, .reviews > h2 {
+	margin: 0;
+	border-bottom: solid 1px #DDDDDD;
+	font-size: 16px;
+}
+.places .amenities h3, .reviews h3 {
+	margin: 0;
+	font-size: 14px;
+}
+.places .amenities p, .reviews p{
+	margin: 0;
+	font-size: 12px;
+}
+.reviews li {
+	margin-top: 20px;
+}
+.places .amenities ul {
+	padding: 10px 0;
+}
+.places .amenities li {
+	margin-top: 10px;
+}
+.pets-icon::before, .tv-icon::before, .wifi-icon::before {
+	content: "";
+	padding-left: 15px;
+	padding-top: 4px;
+	margin-right: 15px;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.pets-icon::before {
+	background-image: url("../images/icon_pets.png");
+}
+.tv-icon::before {
+	background-image: url("../images/icon_tv.png");
+}
+.wifi-icon::before {
+	background-image: url("../images/icon_wifi.png");
+}
